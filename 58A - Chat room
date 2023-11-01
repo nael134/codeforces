@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    string b= "hello";
+    int i=0;
+ 
+    for(int j=0; j<s.length(); j++){
+        if(s[j] == b[i]){
+            i++;
+            if(i==5){cout<<"YES"; return 0;}
+        }
+    }
+    cout<<"NO";
+}
