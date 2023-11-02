@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    for(int i=0; i<t; i++){
+        vector<int> a;
+        for(int j=0; j<4; j++){
+            int b;
+            cin>>b;
+            a.push_back(b);
+        }
+        int m=max(a[0],a[1]);
+        int n=max(a[2],a[3]);
+        sort(a.begin() , a.end());
+        
+        if((m==a[2] || m==a[3]) && (n==a[2] || n==a[3])){
+            cout<<"YES\n";
+        }
+        else{
+            cout<<"NO\n";
+        }
+    }
+}
