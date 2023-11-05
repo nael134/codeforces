@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+ 
+int main() {
+    int year;
+    cin>>year;
+    year++;
+    while (true) {
+ 
+        string s = to_string(year);
+        sort(s.begin(), s.end());
+        
+        bool hasDuplicate = false;
+        for (int i = 0; i < 3; i++) {
+            if (s[i] == s[i+1]) {
+                hasDuplicate = true;
+                break;
+            }
+        }
+ 
+        if (!hasDuplicate) {
+            break;
+        }
+ 
+        year++;
+    }
+ 
+    cout <<year;
+    return 0;
+}
