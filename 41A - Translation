@@ -1,0 +1,9 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    string s,m;
+    cin>>s>>m;
+    reverse(m.begin() , m.end());
+    s == m? cout<<"YES" : cout<<"NO";
+}
