@@ -1,0 +1,36 @@
+Copy
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int n,k,count=0;
+    cin>>n;
+    vector<int> m;
+    int high;
+    int low;
+    for(int i=0; i<n; i++)
+    {
+        cin>>k;
+        m.push_back(k);
+    
+        if( i == 0)
+        {
+            high = m[0];
+            low = m[0];
+        }
+        else
+        {
+            if(m[i] > high)
+            {
+                high = m[i];
+                count++;
+            }
+            if(m[i] <low)
+            {
+                low = m[i];
+                count++;
+            } 
+        }   
+    }
+    cout<<count;
+}
