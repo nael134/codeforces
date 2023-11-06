@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int t,a,b;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b;
+        int count=0;
+        int remainder = a % b;
+        if(remainder != 0)
+        {
+            count = b - remainder;
+        }
+        cout<<count<<"\n";
+    }
+}
