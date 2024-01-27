@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+ 
+int main() {
+    int n, l, f, num = 0;
+    cin >> n >> f;
+    n -= 1;
+    int dec = 1;
+    while (n--) {
+        cin >> l;
+        if (l >= f) {
+            dec++;
+            f = l;
+        } else {
+            if (num < dec) {
+                num = dec;
+            }
+            dec = 1;
+            f = l;
+        }
+    }
+    if (num < dec) {
+        num = dec;
+    }
+    cout << num;
+    return 0;
+}
