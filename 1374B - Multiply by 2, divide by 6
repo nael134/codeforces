@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+	int t;
+	cin >> t;
+ 
+	while (t--)
+	{
+		int n, count = 0;
+		cin >> n;
+		if (n == 1)
+			cout << 0 << endl;
+		else
+		{
+			while (n != 1)
+			{
+				if (n % 6 == 0)
+				{
+					n = n / 6;
+					count++;
+				}
+				else
+				{
+					n = n * 2;
+					count++;
+					if (n % 6 != 0 && n != 1)
+					{
+						cout << -1 << endl;
+						break;
+					}
+				}
+			}if (n % 6 != 0 && n != 1)
+				continue;
+			else
+				cout << count << endl;
+		}
+	}
+}
