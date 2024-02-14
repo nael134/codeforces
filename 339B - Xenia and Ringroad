@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+	int n, m,First_Task;
+	cin >> n >> m>>First_Task;
+	m--;
+	long long counter = First_Task - 1;
+	while (m--)
+	{
+		int d;
+		cin >> d;
+ 
+		if (d < First_Task)
+		{
+			counter += n - First_Task + d;
+			First_Task = d;
+		}
+		else if(d == First_Task)
+			First_Task = d;
+		else
+		{
+			counter += d - First_Task;
+			First_Task = d;
+		}
+	}
+	cout << counter << endl;
+}
