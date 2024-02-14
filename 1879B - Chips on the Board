@@ -1,0 +1,51 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	while (n--)
+	{
+		long long m;
+		cin >> m;
+		long long a[m], b[m];
+		long long acounter = 0;
+		for (int i = 0; i < m; i++)
+		{
+			cin >> a[i];
+			acounter += a[i];
+		}
+		long long bcounter = 0;
+		for (int i = 0; i < m; i++)
+		{
+			cin >> b[i];
+			bcounter += b[i];
+		}
+
+		sort(a, a + m);
+		sort(b, b + m);
+
+		long long counter = 0;
+
+		if (acounter + b[0] * m >= bcounter + a[0] * m )
+		{
+			counter = a[0] * m;
+			for (int i = 0; i < m; i++)
+			{
+				counter += b[i];
+			}
+			cout << counter << endl;
+		}
+		else
+		{
+			counter = b[0] * m;
+			for (int i = 0; i < m; i++)
+			{
+				counter += a[i];
+			}
+			cout << counter << endl;
+		}
+	}
+}
