@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		int k;
+		cin >> k;
+		int counter = 0;
+		for (int i = 1; i <= k; i++)
+		{
+			counter++;
+			if (counter % 3 == 0 || counter % 10 == 3)
+				counter++;
+			if (counter % 3 == 0 || counter % 10 == 3)
+				counter++;
+		}
+		
+		cout << counter << endl;
+	}
+}
