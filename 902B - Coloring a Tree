@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 1e5 + 2;
+int n;
+vector<vector<int>> adj(N);
+bool vis[N];
+vector<int> colors;
+vector<int> finalcolor;
+int ans = 0;
+
+void dfs(int node, int color)
+{
+
+    vis[node] = 1;
+    finalcolor[node]=color;
+    if(colors[node] != finalcolor[node])
+    {
+    	finalcolor[node] = colors[node];
+        ans++;
+    }
+
+    for(auto it: adj[node])
+    {
+        if(!vis[it])
+        {
+            dfs(it, colors[node]);
+        }
+    }
+}
+
+int main()
+{
+    cin >> n;
+
+    colors.resize(n + 1);
+    finalcolor.resize(n + 1);
+
+    for(int i = 2; i <= n; i++)
+    {
+        int x; cin >> x;
+        adj[x].push_back(i);
+        adj[i].push_back(x);
+    }
+
+    for(int i = 1; i <= n; i++)
+    {
+        cin >> colors[i];
+    }
+
+    dfs(1, 0);
+
+    cout << ans << endl;
+}
